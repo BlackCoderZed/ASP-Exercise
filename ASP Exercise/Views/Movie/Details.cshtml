@@ -1,0 +1,28 @@
+﻿@model ASP_Exercise.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+@if (Model != null)
+{
+    <h4>@Model.Name</h4>
+
+    <p class="text-muted">@Model.ReleasedDate.ToString("dd/MM/yyyy")</p>
+    <text>Genre : @Model.GenreType.Genre</text>
+    <hr />
+    <h4>Synopsis of @Model.Name</h4><br />
+    <p>
+        &nbsp;&nbsp;&nbsp;@Model.Description
+    </p>
+}
+else
+{
+    <strong>No Record</strong>
+}
+
+
+

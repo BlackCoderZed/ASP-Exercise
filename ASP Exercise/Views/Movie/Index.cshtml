@@ -1,0 +1,61 @@
+﻿
+@using PagedList;
+@using PagedList.Mvc;
+@model IPagedList<ASP_Exercise.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movies</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().ReleasedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().GenreType.Genre)
+            </th>
+            @*<th></th>*@
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                </td>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ReleasedDate.Date)*@
+                    @item.ReleasedDate.ToString("dd/MM/yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenreType.Genre)
+                </td>
+                @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>*@
+            </tr>
+        }
+    </tbody>
+
+
+</table>
+
+@Html.PagedListPager(Model,page => Url.Action("Index",new { page}))
