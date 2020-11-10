@@ -275,6 +275,10 @@
     <Compile Include="Migrations\202011081750298_addMovieDescription.Designer.cs">
       <DependentUpon>202011081750298_addMovieDescription.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011100537255_GenreTypeChanges.cs" />
+    <Compile Include="Migrations\202011100537255_GenreTypeChanges.Designer.cs">
+      <DependentUpon>202011100537255_GenreTypeChanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -288,6 +292,10 @@
     <Compile Include="ViewModel\RandomMoviceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-ASP Exercise-20201106015026.mdf" />
+    <Content Include="App_Data\aspnet-ASP Exercise-20201106015026_log.ldf">
+      <DependentUpon>aspnet-ASP Exercise-20201106015026.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-slate.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -357,7 +365,6 @@
     <Content Include="Views\Movie\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Views\Student\" />
   </ItemGroup>
   <ItemGroup>
@@ -416,6 +423,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011081750298_addMovieDescription.resx">
       <DependentUpon>202011081750298_addMovieDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011100537255_GenreTypeChanges.resx">
+      <DependentUpon>202011100537255_GenreTypeChanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
